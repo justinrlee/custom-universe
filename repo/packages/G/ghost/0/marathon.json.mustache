@@ -1,0 +1,23 @@
+{
+  "id": "{{service.name}}",
+  "instances": {{service.instances}},
+  "cpus": {{service.cpus}},
+  "mem": {{service.mem}},
+  "container": {
+    "type": "MESOS",
+    "docker": {
+      "image": "{{resource.assets.container.docker.ghost}}"
+    },
+    "portMappings": [
+      {
+        "containerPort": 2368
+      }
+    ]
+  },
+  "networks": [
+    {
+      "mode": "container/bridge"
+    }
+  ],
+  "user": "root"
+}

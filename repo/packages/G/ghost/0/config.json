@@ -1,0 +1,39 @@
+{
+	"type": "object",
+	"properties": {
+		"service": {
+			"description": "Configuration properties for the Ghost service for DC/OS.",
+			"type": "object",
+			"properties": {
+				"name": {
+					"description": "The name of the service to display in the DC/OS dashboard.",
+					"type": "string",
+					"default": "ghost"
+				},
+				"cpus": {
+					"description": "CPU shares to allocate to each Jenkins master.",
+					"type": "number",
+					"default": 1.0,
+					"minimum": 0.1
+				},
+				"mem": {
+					"description": "Memory (in MB) to allocate to each Jenkins master.",
+					"type": "number",
+					"default": 2048.0,
+					"minimum": 2048.0
+				},
+				"instances": {
+					"default": 1,
+					"description": "Number of instances to run.",
+					"minimum": 1,
+					"type": "integer"
+				}
+			},
+			"required": [
+				"name",
+				"cpus",
+				"mem"
+			]
+		}
+	}
+}
