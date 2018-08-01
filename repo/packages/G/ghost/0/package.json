@@ -1,0 +1,18 @@
+{
+  "packagingVersion": "3.0",
+  "name": "ghost",
+  "version": "1.0.0-1.25.3",
+  "minDcosReleaseVersion": "1.10",
+  "scm": "https://github.com/docker-library/ghost.git",
+  "maintainer": "nobody",
+  "website": "https://ghost.org/",
+  "framework": false,
+  "description": "Hello world app: Ghost blogging platform",
+  "tags": ["ghost"],
+  "preInstallNotes": "WARNING: This doesn't currently support persistent storage.  This is meant to demo the custom universe capability.  Any data stored will be lost on task restart\n",
+  "postInstallNotes": "Ghost has been installed.",
+  "postUninstallNotes": "Ghost has been uninstalled.",
+  "licenses": [
+  ],
+  "selected": true
+}

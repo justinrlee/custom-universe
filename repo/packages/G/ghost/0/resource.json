@@ -1,0 +1,15 @@
+
+{
+  "images": {
+    "icon-small": "https://dl2.macupdate.com/images/icons256/56832.png",
+    "icon-medium": "https://dl2.macupdate.com/images/icons256/56832.png",
+    "icon-large": "https://dl2.macupdate.com/images/icons256/56832.png"
+  },
+  "assets": {
+    "container": {
+      "docker": {
+        "ghost": "ghost:1.25.3"
+      }
+    }
+  }
+}
