@@ -20,7 +20,7 @@ sudo yum install -y python34 python34-pip
 sudo pip3 install jsonschema
 ```
 
-## Example Usage:
+## Usage Example:
 
 There is an example package (Ghost) in the `example` branch:
 
@@ -44,4 +44,9 @@ docker tag customer/custom-universe:latest customer/custom-universe:$(date +%s)
 
 # Run the Docker image (the container exposes port 80, this listens on port 8080)
 docker run -d -p 8080:80 customer/custom-universe:latest
+```
+
+Then, you can add the repo to your DC/OS cluster like this (replace with the correct IP address):
+```bash
+dcos package repo add custom-universe http://10.10.0.100:8080/repo
 ```
