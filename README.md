@@ -38,15 +38,21 @@ bash scripts/build.sh
 # Copy metadata into build directory
 cp -rpv target docker/server/
 
+# Move to docker/server directory
+cd docker/server/
+
 # Build Docker image
-docker build -t customer/custom-universe:latest
+docker build -t customer/custom-universe:latest .
 docker tag customer/custom-universe:latest customer/custom-universe:$(date +%s)
 
 # Run the Docker image (the container exposes port 80, this listens on port 8080)
 docker run -d -p 8080:80 customer/custom-universe:latest
+
+# Test it; raw json is available at `universe.json`
+curl localhost:8080/universe.json
 ```
 
-Then, you can add the repo to your DC/OS cluster like this (replace with the correct IP address):
+Then, you can add the repo to your DC/OS cluster like this (replace with the correct IP address) (note that the path for this should be `/repo`)
 ```bash
 dcos package repo add custom-universe http://10.10.0.100:8080/repo
 ```
